@@ -22,5 +22,9 @@ elseif (isset($_GET['deauth_all'])) {
     http_response_code(204);
   }
 }
+else {
+  http_response_code(404);
+  echo '{ "error":"Endpoint not found."}';
+}
 
 ?>
