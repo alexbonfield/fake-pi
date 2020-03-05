@@ -1,0 +1,27 @@
+# ./docker-compose.yml
+
+version: '3.7'
+
+networks:
+  frontend:
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+services:
+  api:
+    build: .
+    container_name: fake-pi_api
+    volumes:
+      - ./app/:/var/www/html/
+    ports:
+      - "8100:80"
+    stdin_open: true
+    tty: true
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_NAME=${DB_NAME}
+    networks:
+      frontend:
+        ipv4_address: 172.20.0.3

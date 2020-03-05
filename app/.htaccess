@@ -1,0 +1,5 @@
+RewriteEngine On    # Turn on the rewriting engine
+
+RewriteRule ^internal/app/([0-9a-zA-Z_-]*)/auth$ index.php?uuid=$1 [NC,L]
+RewriteRule ^internal/app/([0-9a-zA-Z_-]*)/deauth$ index.php?uuid=$1&deauth_all=true [NC,L]
+RewriteRule ^internal/app/([0-9a-zA-Z_-]*)/deauth/([0-9a-zA-Z_-]*)$ index.php?uuid=$1&cognito_uuid=$2 [NC,L]
