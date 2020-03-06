@@ -12,3 +12,5 @@ Username and password you can see in the CP docker-compose file.
 Once you've done this, you need to go to the docker-compose file in the CP project and change the API URL variable to http://172.20.0.3 and do make up.
 
 Run make up in the fake-pi directory and it should build the containers and connect them.
+
+Run make down to remove containers and the network.
