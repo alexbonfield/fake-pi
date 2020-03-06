@@ -1,4 +1,5 @@
 <?php
+
 include 'includes/authenticate.class.php';
 
 header("Content-Type:application/json");

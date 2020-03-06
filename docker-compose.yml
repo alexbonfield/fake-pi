@@ -3,7 +3,7 @@
 version: '3.7'
 
 networks:
-  frontend:
+  api_network:
     ipam:
       config:
         - subnet: 172.20.0.0/24
@@ -23,5 +23,5 @@ services:
       - DB_PASS=${DB_PASS}
       - DB_NAME=${DB_NAME}
     networks:
-      frontend:
+      api_network:
         ipv4_address: 172.20.0.3
